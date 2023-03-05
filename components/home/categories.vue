@@ -14,7 +14,7 @@
               Delectus</v-card-subtitle
             >
             <v-card-actions class="">
-              <v-btn color="white" block elevation="0">text</v-btn>
+              <v-btn tile color="white" block elevation="0">text</v-btn>
             </v-card-actions>
           </v-card></v-img
         ></v-col
@@ -31,12 +31,55 @@
               Delectus</v-card-subtitle
             >
             <v-card-actions class="">
-              <v-btn color="white" block elevation="0">text</v-btn>
+              <v-btn tile color="white" block elevation="0">text</v-btn>
             </v-card-actions>
           </v-card></v-img
         ></v-col
       ></v-row
-    ></v-sheet
+    ><v-row
+      ><v-col cols="4"
+        ><v-img
+          src="https://d-themes.com/vue/riode/demo-24/img/1.ad4333e.jpg"
+          class="d-flex justify-center align-center"
+        ></v-img
+        ><v-sheet>
+          <p class="text-subtitle-1 text-center">Phones && Consoles</p>
+          <p
+            class="mt-n5 text--secondary text-subtitle-2 font-weight-light text-center"
+          >
+            5 Products
+          </p>
+        </v-sheet></v-col
+      >
+      <v-col cols="4"
+        ><v-img
+          src="https://d-themes.com/vue/riode/demo-24/img/3.25c201b.jpg"
+          class="d-flex justify-center align-center"
+        ></v-img
+        ><v-sheet>
+          <p class="text-subtitle-1 text-center">Phones && Consoles</p>
+          <p
+            class="mt-n5 text--secondary text-subtitle-2 font-weight-light text-center"
+          >
+            5 Products
+          </p>
+        </v-sheet></v-col
+      >
+      <v-col cols="4"
+        ><v-img
+          src="https://d-themes.com/vue/riode/demo-24/img/2.90cd120.jpg"
+          class="d-flex justify-center align-center"
+        ></v-img
+        ><v-sheet>
+          <p class="text-subtitle-1 text-center">Phones && Consoles</p>
+          <p
+            class="mt-n5 text--secondary text-subtitle-2 font-weight-light text-center"
+          >
+            5 Products
+          </p>
+        </v-sheet></v-col
+      >
+    </v-row></v-sheet
   >
 </template>
 
