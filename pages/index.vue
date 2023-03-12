@@ -62,40 +62,50 @@
                 ><v-sheet
                   class="d-flex fill-height justify-center align-center"
                   color="transparent"
-                  ><v-card color=" transparent " elevation="0">
-                    <p class="text-h4 text-center font-weight-bold">
-                      Product request
-                    </p>
-                    <p
-                      class="mt-n5 text-h6 text-center font-weight-regular text--secondary"
-                    >
-                      Start Shopping Right Now
-                    </p>
-                    <v-text-field
-                      label="Your phone number"
-                      placeholder="89007861"
-                      filled
-                      rounded
-                      dense
-                      color="grey darken-3"
-                    ></v-text-field>
-                    <v-textarea
-                      outlined
-                      color="darken-3 grey"
-                      name="input-7-4"
-                      label="Your product idea"
-                    ></v-textarea>
-                    <v-card-actions>
-                      <v-btn color="white" block>Send request</v-btn>
-                    </v-card-actions>
-                  </v-card></v-sheet
-                ></v-img
+                  ><v-container grid-list-xs>
+                    <v-card color=" transparent " elevation="0">
+                      <p class="text-h4 text-center font-weight-bold">
+                        Product request
+                      </p>
+                      <p
+                        class="mt-n5 text-h6 text-center font-weight-regular text--secondary"
+                      >
+                        Start Shopping Right Now
+                      </p>
+                      <v-text-field
+                        label="Your phone number"
+                        placeholder="89007861"
+                        filled
+                        rounded
+                        dense
+                        color="grey darken-3"
+                      ></v-text-field>
+                      <v-textarea
+                        outlined
+                        color="darken-3 grey"
+                        name="input-7-4"
+                        label="Your product idea"
+                      ></v-textarea>
+                      <v-card-actions>
+                        <v-btn color="white" block>Send request</v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </v-container>
+                </v-sheet></v-img
               ></v-col
             ></v-row
-          >
-        </v-sheet></v-col
-      ></v-row
-    >
+          > </v-sheet
+        ><v-divider class="my-16"></v-divider>
+        <v-sheet class="my-16">
+          <p class="text-center text-h4 font-weight-bold">Featured</p>
+          <v-row
+            ><v-col v-for="brand in 6" :key="brand" cols="4" md="2"
+              ><router-link to="/zuna"
+                ><v-img
+                  src="https://d-themes.com/vue/riode/demo-24/images/brands/4.png"
+                ></v-img></router-link></v-col
+          ></v-row> </v-sheet></v-col
+    ></v-row>
   </v-container>
 </template>
 

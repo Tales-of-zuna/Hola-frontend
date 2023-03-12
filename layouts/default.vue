@@ -47,41 +47,42 @@
             ></v-toolbar-title>
             <v-spacer />
             <div class="d-none d-md-flex">
-              <v-btn small to="/" color="  grey darken-3" plain>Home</v-btn>
+              <v-btn small to="/" color="grey darken-3" plain>Нүүр</v-btn>
               <v-menu open-on-hover bottom offset-y>
                 <template v-slot:activator="{ on, attrs }">
                   <v-btn
-                    color="gray darken-3"
+                    color="grey darken-3"
                     small
-                    plain
+                    text
                     v-bind="attrs"
                     v-on="on"
                   >
-                    Category<v-icon>mdi-chevron-down</v-icon>
+                    ангилал<v-icon>mdi-chevron-down</v-icon>
                   </v-btn>
                 </template>
 
                 <v-list>
                   <v-list-item
                     to="/abudabi"
-                    class="font-weight-light"
-                    v-for="i in 4"
+                    class="font-weight-regular text--secondary"
+                    v-for="i in categories"
                     :key="i"
                   >
-                    Phone <v-icon>mdi-chevron-right</v-icon>
+                    {{ i.name }} <v-spacer></v-spacer>
+                    <v-icon>mdi-chevron-right</v-icon>
                   </v-list-item>
                 </v-list>
               </v-menu>
               <v-menu open-on-hover bottom offset-y>
                 <template v-slot:activator="{ on, attrs }">
                   <v-btn
-                    color="gray darken-3"
+                    color="grey darken-3"
                     small
-                    plain
+                    text
                     v-bind="attrs"
                     v-on="on"
                   >
-                    Products<v-icon>mdi-chevron-down</v-icon>
+                    Бүтээгдэхүүн<v-icon>mdi-chevron-down</v-icon>
                   </v-btn>
                 </template>
                 <v-sheet class="d-flex" color="white"
@@ -89,15 +90,19 @@
                     <v-list-item
                       ><v-list-item-content>
                         <v-list-item-title class="font-weight-bold"
-                          >Mobile Phones</v-list-item-title
+                          >Гар утас</v-list-item-title
                         >
                       </v-list-item-content></v-list-item
                     >
-                    <v-list-item v-for="phone in 5" :key="phone" to="/as ">
+                    <v-list-item
+                      v-for="phone in productphone"
+                      :key="phone"
+                      :to="phone.link"
+                    >
                       <v-list-item-content>
                         <v-list-item-title
-                          class="text-subtitle-2 font-weight-regular"
-                          >Samsung Galaxy Fold 4</v-list-item-title
+                          class="text-subtitle-2 text--secondary font-weight-regular"
+                          >{{ phone.name }}</v-list-item-title
                         >
                       </v-list-item-content>
                     </v-list-item>
@@ -113,7 +118,7 @@
                     <v-list-item v-for="phone in 5" :key="phone" to="/as ">
                       <v-list-item-content>
                         <v-list-item-title
-                          class="text-subtitle-2 font-weight-regular"
+                          class="text-subtitle-2 text--secondary font-weight-regular"
                           >Samsung Galaxy Fold 4</v-list-item-title
                         >
                       </v-list-item-content>
@@ -147,13 +152,13 @@
               ><v-menu open-on-hover bottom offset-y>
                 <template v-slot:activator="{ on, attrs }">
                   <v-btn
-                    color="gray darken-3"
+                    color="grey darken-3"
                     small
-                    plain
+                    text
                     v-bind="attrs"
                     v-on="on"
                   >
-                    Used Products<v-icon>mdi-chevron-down</v-icon>
+                    Ашигласан<v-icon>mdi-chevron-down</v-icon>
                   </v-btn>
                 </template>
 
@@ -169,7 +174,7 @@
                     <v-list-item v-for="phone in 5" :key="phone" to="/as">
                       <v-list-item-content>
                         <v-list-item-title
-                          class="text-subtitle-2 font-weight-regular"
+                          class="text-subtitle-2 text--secondary font-weight-regular"
                           >Samsung Galaxy Fold 4</v-list-item-title
                         >
                       </v-list-item-content>
@@ -186,7 +191,7 @@
                     <v-list-item v-for="phone in 5" :key="phone" to="/as ">
                       <v-list-item-content>
                         <v-list-item-title
-                          class="text-subtitle-2 font-weight-regular"
+                          class="text-subtitle-2 text--secondary font-weight-regular"
                           >Samsung Galaxy Fold 4</v-list-item-title
                         >
                       </v-list-item-content>
@@ -216,20 +221,19 @@
                 >
               </v-menu>
 
-              <v-btn small color="  grey darken-3" plain>text</v-btn>
-
-              <v-btn small color="  grey darken-3" plain>text</v-btn>
+              <v-btn small color="  grey darken-3" text>text</v-btn>
+              <v-btn small color="  grey darken-3" text>text</v-btn>
             </div>
 
             <v-spacer></v-spacer>
             <!-- <v-card elevation="0" width="200">
-  <v-text-field
-    color="gray darken-3"
-    hide-details
-    append-icon="mdi-magnify"
-    single-line
-  ></v-text-field>
-</v-card> -->
+              <v-text-field
+                color="grey darken-3"
+                hide-details
+                append-icon="mdi-magnify"
+                single-line
+              ></v-text-field>
+            </v-card> -->
             <v-btn large color="grey darken-3" icon
               ><v-icon>mdi-magnify</v-icon></v-btn
             >
@@ -264,8 +268,33 @@
       <Nuxt />
     </v-main>
 
-    <v-footer app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+    <v-footer elevation="5" padless>
+      <v-card flat tile class="text-center">
+        <v-card-text>
+          <v-btn v-for="icon in icons" :key="icon" class="mx-4" icon>
+            <v-icon size="24px">
+              {{ icon }}
+            </v-icon>
+          </v-btn>
+        </v-card-text>
+
+        <v-card-text class="pt-0">
+          Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet.
+          Mauris cursus commodo interdum. Praesent ut risus eget metus luctus
+          accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim
+          a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula
+          lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus
+          iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum
+          tempor vel ut orci. Orci varius natoque penatibus et magnis dis
+          parturient montes, nascetur ridiculus mus.
+        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-text>
+          {{ new Date().getFullYear() }} — <strong>Zuna</strong>
+        </v-card-text>
+      </v-card>
     </v-footer>
   </v-app>
 </template>
@@ -277,7 +306,7 @@ export default {
     return {
       rightDrawer: false,
       drawer: false,
-
+      icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
       items: [
         {
           icon: "mdi-apps",
@@ -290,7 +319,52 @@ export default {
           to: "/inspire",
         },
       ],
+      categories: [
+        {
+          name: "Утас",
+        },
+        {
+          name: "Консол",
+        },
+        {
+          name: "Дагалдах хэрэгсэл",
+        },
+      ],
 
+      productphone: [
+        {
+          name: "iPhone 14",
+          link: "/iPhone",
+        },
+        {
+          name: "iPhone 14 Pro",
+          link: "/iPhone",
+        },
+        {
+          name: "iPhone 14 Pro Max",
+          link: "/iPhone",
+        },
+        {
+          name: "Galaxy Fold 4",
+          link: "/iPhone",
+        },
+        {
+          name: "Galaxy Flip 4",
+          link: "/iPhone",
+        },
+        {
+          name: "Samsung S23",
+          link: "/iPhone",
+        },
+        {
+          name: "Samsung S23 Plus",
+          link: "/iPhone",
+        },
+        {
+          name: "Samsung S23 Ultra",
+          link: "/iPhone",
+        },
+      ],
       title: "Vuetify.js",
     };
   },

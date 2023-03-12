@@ -3,6 +3,7 @@
     <v-row>
       <v-col cols="12" md="8"
         ><v-carousel
+          cycle
           show-arrows-on-hover
           hide-delimiter-background
           delimiter-icon="mdi-minus"

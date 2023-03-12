@@ -14,7 +14,7 @@
               Delectus</v-card-subtitle
             >
             <v-card-actions class="">
-              <v-btn tile color="white" block elevation="0">text</v-btn>
+              <v-btn tile color="white" block elevation="0">View more</v-btn>
             </v-card-actions>
           </v-card></v-img
         ></v-col
@@ -31,7 +31,7 @@
               Delectus</v-card-subtitle
             >
             <v-card-actions class="">
-              <v-btn tile color="white" block elevation="0">text</v-btn>
+              <v-btn tile color="white" block elevation="0">View more</v-btn>
             </v-card-actions>
           </v-card></v-img
         ></v-col

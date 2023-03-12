@@ -24,7 +24,7 @@
       <v-col cols="12" md="8">
         <v-row
           ><v-col v-for="card in 6" :key="card" cols="6" md="4"
-            ><v-card elevation="0">
+            ><v-card elevation="0"> 
               <v-img
                 src="https://d-themes.com/vue/riode/server/uploads/demo_24_product_1_2_25839d064e.jpg"
               ></v-img>
