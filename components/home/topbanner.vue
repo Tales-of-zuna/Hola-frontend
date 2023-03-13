@@ -35,13 +35,15 @@
                       </v-card-subtitle>
 
                       <v-card-actions>
-                        <v-btn
-                          block
-                          color="white"
-                          class="font-weight-bold"
-                          tile
-                          elevation="0"
-                          >View more</v-btn
+                        <v-hover v-slot="{ hover }"
+                          ><v-btn
+                            block
+                            color="white"
+                            class="font-weight-bold"
+                            tile
+                            :elevation="hover ? 5 : 0"
+                            >View more</v-btn
+                          ></v-hover
                         >
                       </v-card-actions>
                     </v-card>
